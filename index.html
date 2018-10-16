@@ -1,7 +1,509 @@
-<html>
-  <head>
-  <title>Sara Hartleben</title>
-  </head>
-  <body>
-  </body>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>FOGxFLO</title>
+    <meta name="description" content="fullPage full-screen background videos." />
+    <meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,video,full-screen" />
+	<meta name="Resource-type" content="Document" />
+
+
+	<link rel="stylesheet" type="text/css" href="fullPage.js-master/dist/fullpage.css" />
+	<link rel="stylesheet" type="text/css" href="index.css" />
+	<style>
+
+	.hide{
+		display:none;
+	}
+	.show{
+		display:block;
+	}
+
+	/* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 5em;
+		/*font-family: arial,helvetica;*/
+		font-family: helvetica neue;
+		color: #fff;
+		margin:0;
+		padding:0;
+	}
+	@keyframes fadein {
+    	from {
+        	opacity:0;
+    	}
+   		 to {
+       		 opacity:1;
+    	}
+	}
+	@-moz-keyframes fadein { /* Firefox */
+    	from {
+     	   opacity:0;
+   		 }
+    	to {
+      	   opacity:1;
+    	}
+	}
+	@-webkit-keyframes fadein { /* Safari and Chrome */
+    	from {
+      		 opacity:0;
+   		 }
+   		 to {
+       		 opacity:1;
+    	}
+	}
+	@-o-keyframes fadein { /* Opera */
+   		 from {
+        	opacity:0;
+    	}
+    	to {
+       		 opacity: 1;
+    	}
+	}
+	* --------------------------------------- */
+	h2{
+		font-size: 10em;
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+		padding:0;
+
+		@keyframes fadein {
+    	from {
+        	opacity:0;
+    	}
+   		 to {
+       		 opacity:1;
+    	}
+	}
+	@-moz-keyframes fadein { /* Firefox */
+    	from {
+     	   opacity:0;
+   		 }
+    	to {
+      	   opacity:1;
+    	}
+	}
+	@-webkit-keyframes fadein { /* Safari and Chrome */
+    	from {
+      		 opacity:0;
+   		 }
+   		 to {
+       		 opacity:1;
+    	}
+	}
+	@-o-keyframes fadein { /* Opera */
+   		 from {
+        	opacity:0;
+    	}
+    	to {
+       		 opacity: 1;
+    	}
+	}
+	}
+	* --------------------------------------- */
+	h3{
+		font-size: 5em;
+		font-family: arial,helvetica;
+		color: #fff;
+/*		margin:0;
+		padding:0;*/
+	}
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+		overflow: hidden;
+	}
+
+	#myVideo{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		top:0;
+		right:0;
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
+ 		background-color: black; /* in case the video doesn't fit the whole page*/
+  		background-image: /* our video */;
+  		background-position: center center;
+  		background-size: contain;
+   		object-fit: cover; /*cover video background */
+   		z-index:3;
+	}
+
+
+	/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	#section0 .layer{
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		left: 0;
+		top: 43%;
+
+		/*
+		* Preventing flicker on some browsers
+		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
+		*/
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section0{
+		overflow: hidden;
+	}
+
+	/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	#section1 .layer{
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		left: 0;
+		top: 43%;
+
+		/*
+		* Preventing flicker on some browsers
+		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
+		*/
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section1{
+		overflow: hidden;
+	}
+
+	/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	#section2 .layer{
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		left: 0;
+		top: 43%;
+
+		/*
+		* Preventing flicker on some browsers
+		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
+		*/
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section2{
+		overflow: hidden;
+	}
+
+	/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	#section3 .layer{
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		left: 0;
+		top: 43%;
+
+		/*
+		* Preventing flicker on some browsers
+		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
+		*/
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section3{
+		overflow: hidden;
+	}
+
+	/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	#section4 .layer{
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		left: 0;
+		top: 43%;
+
+		/*
+		* Preventing flicker on some browsers
+		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
+		*/
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section4{
+		overflow: hidden;
+	}
+
+		/* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+	#section5 .layer{
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		left: 0;
+		top: 43%;
+
+		/*
+		* Preventing flicker on some browsers
+		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
+		*/
+		-webkit-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+
+	/*solves problem with overflowing video in Mac with Chrome */
+	#section5{
+		overflow: hidden;
+	}
+
+	/* Hiding video controls
+	* See: https://css-tricks.com/custom-controls-in-html5-video-full-screen/
+	* --------------------------------------- */
+	video::-webkit-media-controls {
+	  display:none !important;
+	}
+
+	</style>
+</head>
+<body>
+
+<div id="fullpage">
+
+	<div id="test"><div class="section" id="section0">
+		<h1>Fog x FLO<br>Virtual Tour</h1>
+		<br>
+		<h2>
+			This website explores different perspectives through<br>
+			Fujiko Nakaya’s fog sculptures. Featuring each of the<br> 
+			five locations, experience the fog throughout the<br>
+			entire Emerald Necklace through your computer screen.<br>
+			Scroll down for more.
+		</h2>
+		<br>
+		<br>
+		<br>
+		<img src="arrow_down.png" width="5%">
+	</div>
+
+	<!-- <div class="section" id="section1">
+		<h1>About</h1>
+		<br>
+		<br>
+		<h2>
+			This website explores different perspectives through<br>
+			Fujiko Nakaya’s fog sculptures. Featuring each of the<br> 
+			five locations, experience the fog throughout the<br>
+			entire Emerald Necklace through your computer screen.</h2>
+		<br>
+		<br>
+		<br>
+		<img src="arrow_down.png" width="5%">
+	</div> -->
+
+	<div class="section " id="section1">
+		<video id="myVideo" loop data-autoplay>
+			<source src="FogxCanopy.mp4" type="video/mp4" allow="autoplay">
+		</video>
+		<div class="layer">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<h3>Fog x Canopy<br>
+				Back Bay Fens<br>
+				Wednesday, October 3rd, 12pm</h3>
+		</div>
+	</div>
+
+	<div class="section" id="section2">
+		<video id="myVideo" loop data-autoplay>
+			<source src="FogxBeach.mp4" type="video/mp4" allow="autoplay">
+			<!-- <source src="https://player.vimeo.com/video/294396817?background=1" type="video/mp4" allow="autoplay"> -->
+			<!-- <source src="fullPage.js-master/examples/imgs/flowers.webm" type="video/webm"> -->
+		</video>
+		<div class="layer">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<h3>Fog x Beach<br>
+				Jamaica pond<br>
+				Saturday, October 6th, 5:30pm</h3>
+		</div>
+	</div>
+
+	<div class="section" id="section3">
+		<video id="myVideo" loop data-autoplay>
+			<source src="FogxRuin.mp4" type="video/mp4" allow="autoplay">
+			<!-- <source src="https://player.vimeo.com/video/294396817?background=1" type="video/mp4" allow="autoplay"> -->
+			<!-- <source src="fullPage.js-master/examples/imgs/flowers.webm" type="video/webm"> -->
+		</video>
+		<div class="layer">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<h3>Fog x Ruin<br>
+				Franklin Park<br>
+				Thursday, October 11th, 5:30pm</h3>
+		</div>
+	</div>
+
+	<div class="section" id="section4">
+		<!-- <video id="myVideo" loop data-autoplay>
+			<source src="FogxHill.mp4" type="video/mp4" allow="autoplay">
+			<source src="https://player.vimeo.com/video/294396817?background=1" type="video/mp4" allow="autoplay">
+		</video> -->
+		<div class="layer">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<h3>Fog x Hill<br>
+				Arnold Arboretum<br>
+				Saturday, October 13th, 5pm</h3>
+		</div>
+	</div>
+
+	<div class="section" id="section5">
+		<video id="myVideo" loop data-autoplay>
+			<source src="FogxIsland.mp4" type="video/mp4" allow="autoplay">
+			<!-- <source src="https://player.vimeo.com/video/294396817?background=1" type="video/mp4" allow="autoplay"> -->
+			<!-- <source src="fullPage.js-master/examples/imgs/flowers.webm" type="video/webm"> -->
+		</video>
+		<div class="layer">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<h3>Fog x Island<br>
+				Leverett Pond<br>
+				Sunday, October 14th, 2pm</h3>
+		</div>
+	</div>
+
+	<!-- <div class="section" id="section4">
+		<video id="myVideo" loop muted data-autoplay>
+			<source src="fullPage.js-master/examples/imgs/flowers.mp4" type="video/mp4">
+			<source src="fullPage.js-master/examples/imgs/flowers.webm" type="video/webm">
+		</video>
+		<div class="layer">
+			<h1>Fog x Beach</h1>
+		</div>
+	</div> -->
+
+	<!-- <div class="section" id="section5">
+		<video id="myVideo" loop muted data-autoplay>
+			<source src="fullPage.js-master/examples/imgs/flowers.mp4" type="video/mp4">
+			<source src="fullPage.js-master/examples/imgs/flowers.webm" type="video/webm">
+		</video>
+		<div class="layer">
+			<h1>Fog x Hill</h1>
+		</div>
+	</div> -->
+
+	<!-- <div class="section" id="section6">
+		<video id="myVideo" loop muted data-autoplay>
+			<source src="fullPage.js-master/examples/imgs/flowers.mp4" type="video/mp4">
+			<source src="fullPage.js-master/examples/imgs/flowers.webm" type="video/webm">
+		</video>
+		<div class="layer">
+			<h1>Fog x Ruins</h1>
+		</div>
+	</div> -->
+
+	<!-- <div class="section" id="section3">
+	    <div class="slide" id="slide1"><h1>Slide Backgrounds</h1></div>
+	    <div class="slide" id="slide2"><h1>Totally customizable</h1></div>
+	</div> -->
+	<!-- <div class="section" id="section3"><h1>Lovely images <br />for a lovely page</h1></div> -->
+</div>
+
+
+
+<script type="text/javascript" src="fullPage.js-master/dist/fullpage.js"></script>
+<script type="text/javascript" src="fullPage.js-master/examples/examples.js"></script>
+
+<script type="text/javascript">
+    var myFullpage = new fullpage('#fullpage', {
+        verticalCentered: true,
+        sectionsColor: ['#d6d7d8', '#d6d7d8']
+    });
+</script>
+
+</body>
 </html>
